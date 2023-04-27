@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="6000">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:motionTarget="@+id/imageBall"
+                motion:framePosition="10"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="-0.4"
+                motion:percentY="0.2" />
+            <KeyPosition
+                motion:motionTarget="@+id/imageBall"
+                motion:framePosition="20"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="-0.8"
+                motion:percentY="-0.5" />
+            <KeyPosition
+                motion:motionTarget="@+id/imageBall"
+                motion:framePosition="40"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.3"
+                motion:percentY="0.5" />
+            <KeyPosition
+                motion:motionTarget="@+id/imageBall"
+                motion:framePosition="95"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.5"
+                motion:percentY="-0.4" />
+        </KeyFrameSet>
+        <OnClick motion:targetId="@+id/imageBall" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/imageBall"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintTop_toTopOf="@+id/imageField"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_width="40dp">
+            <Layout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                motion:layout_constraintTop_toTopOf="@+id/imageField"
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintRight_toRightOf="parent"/>
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetStart="@+id/end"
+        motion:constraintSetEnd="@+id/start"
+        motion:duration="3000">
+    <KeyFrameSet>
+        <KeyPosition
+            motion:motionTarget="@+id/imageBall"
+            motion:framePosition="10"
+            motion:keyPositionType="pathRelative"
+            motion:percentX="0.4"
+            motion:percentY="0.2" />
+    </KeyFrameSet>
+    </Transition>
+</MotionScene>
